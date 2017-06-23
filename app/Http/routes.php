@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::group(['middleware' => ['web']], function() {
+    //
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    
+    Route::get('foo/bar', function() {
+        return view('foo.bar');
+    });
+    Route::get('foo/baz', function() {
+        return view('foo.baz');
+    });
+    
 });
