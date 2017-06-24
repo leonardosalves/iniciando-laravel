@@ -24,10 +24,14 @@ class UserController extends Controller
 
     public function create() 
     {
-        return view('view.create');
+        return view('user.create');
     }
 
-    public function post() {
-        
+    public function post(Request $request) {
+        $this->validate($request, [
+            'name' => ['required'],
+            'email' => ['required','email'],
+            'password' => ['required', 'confirmed', 'min:4']
+        ]);
     }
 }
