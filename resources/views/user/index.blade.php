@@ -1,9 +1,9 @@
 @extends('user.base')
 
-@section('title', 'Bar Page')
+@section('title', 'Users Page')
 
 @section('container')
-    <h2>User</h2>
+    <h2>Users</h2>
 
     @foreach ($users as $item)
         <ul>

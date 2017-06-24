@@ -9,18 +9,21 @@ use App\Http\Requests;
 class UserController extends Controller
 {
     //
-    public function index()  {
+    public function index()  
+    {
         $users = ['Wesley' , 'Matheus' , 'Guilherme'];
 
         return view('user.index' , compact('users'));
     }
 
-    public function show($id) {
+    public function show($id) 
+    {
         return view('user.show', compact('id'));
     }
 
 
-    public function create() {
+    public function create() 
+    {
         return view('view.create');
     }
 
