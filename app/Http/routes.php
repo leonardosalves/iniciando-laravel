@@ -20,11 +20,13 @@ Route::group(['middleware' => ['web']], function() {
     });
 
     
-    Route::get('foo/bar', function() {
-        return view('foo.bar');
+    
+    Route::group(['prefix' => 'user'], function() {
+        Route::get('/', ['uses' => 'UserController@index']);
+        Route::get('add', ['uses' => 'UserController@create']);
+        Route::post('add', ['uses' => 'UserController@post']);
+        Route::get('{id}', ['uses' => 'UserController@show']);
     });
-    Route::get('foo/baz', function() {
-        return view('foo.baz');
-    });
+    
     
 });
